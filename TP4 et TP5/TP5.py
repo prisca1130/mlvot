@@ -41,7 +41,6 @@ def generate_detections_file(sequence_path, output_path):
     frame_paths = sorted(sequence_path.glob('*.jpg'))
     detections_list = []
     
-    print(frame_paths)
     # Process each frame
     for frame_idx, frame_path in enumerate(tqdm(frame_paths, desc="Processing frames")):
         # Read frame
@@ -58,7 +57,6 @@ def generate_detections_file(sequence_path, output_path):
             # Format: frame_id, -1 (track_id), x, y, w, h, conf, -1, -1, -1
             detections_list.append([frame_idx + 1, -1, x, y, w, h, conf, -1, -1, -1])
     
-    print(detections_list)
 
     detections_array = np.array(detections_list, dtype=object)
     

@@ -125,7 +125,7 @@ def process_sequence(sequence_path, det_path, output_path, visualize=True):
     if visualize:
         first_frame = cv2.imread(str(Path(sequence_path) / '000001.jpg'))
         height, width = first_frame.shape[:2]
-        out = cv2.VideoWriter('tracking_result.mp4',
+        out = cv2.VideoWriter('tracking_result_TP2.mp4',
                             cv2.VideoWriter_fourcc(*'mp4v'),
                             30, (width, height))
     

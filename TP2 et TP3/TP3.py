@@ -167,7 +167,7 @@ def process_sequence(sequence_path, det_path, output_path, visualize=True):
     if visualize:
         first_frame = cv2.imread(str(sequence_path / '000001.jpg'))
         height, width = first_frame.shape[:2]
-        out = cv2.VideoWriter('tracking_result.mp4',
+        out = cv2.VideoWriter('tracking_result_TP3.mp4',
                             cv2.VideoWriter_fourcc(*'mp4v'),
                             30, (width, height))
     
@@ -218,8 +218,8 @@ def process_sequence(sequence_path, det_path, output_path, visualize=True):
         
     return results
 
-sequence_path = Path("../ADL-Rundle-6/img1")
-det_path = "../ADL-Rundle-6/det/public-dataset/det.txt"
-output_path = "../results_TP3.txt"
+sequence_path = Path("ADL-Rundle-6/img1")
+det_path = "ADL-Rundle-6/det/public-dataset/det.txt"
+output_path = "results_TP3.txt"
 
 results = process_sequence(sequence_path, det_path, output_path)

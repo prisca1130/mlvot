@@ -264,7 +264,7 @@ def process_sequence(sequence_path, det_path,reid_model_path, output_path, visua
     if visualize:
         first_frame = cv2.imread(str(sequence_path / '000001.jpg'))
         height, width = first_frame.shape[:2]
-        out = cv2.VideoWriter('tracking_result.mp4',
+        out = cv2.VideoWriter('tracking_result_TP4.mp4',
                             cv2.VideoWriter_fourcc(*'mp4v'),
                             30, (width, height))
     
@@ -315,9 +315,8 @@ def process_sequence(sequence_path, det_path,reid_model_path, output_path, visua
         
     return results
 
-sequence_path = Path("../ADL-Rundle-6/img1")
-det_path = "../ADL-Rundle-6/det/public-dataset/det.txt"
+sequence_path = Path("ADL-Rundle-6/img1")
+det_path = "ADL-Rundle-6/det/public-dataset/det.txt"
 output_path = "results_TP4.txt"
-reid_model_path = "reid_osnet_x025_market1501.onnx"
-
+reid_model_path = "TP4 et TP5/reid_osnet_x025_market1501.onnx"
 results = process_sequence(sequence_path, det_path,reid_model_path, output_path)
